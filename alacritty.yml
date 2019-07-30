@@ -1,0 +1,76 @@
+Window:
+  dynamic_padding: false
+  decorations: buttonless
+  startup_mode: SimpleFullscreen
+
+scrolling:
+  history: 2000
+  multiplier: 3
+  auto_scroll: false
+
+tabspaces: 2
+
+font:
+  normal:
+    family: Iosevka SS07
+    style: Medium
+  bold:
+    family: Iosevka SS07
+    style: Bold
+  italic:
+    family: Iosevka SS07
+    style: Mediumitalic
+  size: 14.0
+
+draw_bold_text_with_bright_colors: true
+
+visual_bell:
+  duration: 0
+
+background_opacity: 0.6
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+mouse:
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  hide_when_typing: true
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+  save_to_clipboard: false
+
+dynamic_title: true
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+live_config_reload: true
+
+debug:
+  # Display the time it takes to redraw each frame.
+  render_timer: false
+
+  # Keep the log file after quitting Alacritty.
+  persistent_logging: true
+
+  # Log level
+  #
+  # Values for `log_level`:
+  #   - None
+  #   - Error
+  #   - Warn
+  #   - Info
+  #   - Debug
+  #   - Trace
+  log_level: Trace
+
+  # Print all received window events.
+  print_events: false
+
+  # Record all characters and escape sequences as test data.
+  ref_test: false
+
