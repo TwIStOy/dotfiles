@@ -1,22 +1,30 @@
+function __upload_print_help
+  printf 'Usage: upload [OPTIONS] <source_file>... <dest_host>\n\n'
+  printf 'Options:\n'
+  printf '  -h/--help        Show this message and exit.\n'
+  printf '  -u/--user        Username to login.\n'
+  printf '  -p/--port        Specifies the port to connect to on the remote host.\n'
+  printf '  -d/--direct      Use direct mode.\n'
+  printf '  -f/--folder      Upload folder. Default is /tmp.'
+  printf '  -i/--identity    Select this file from which the identity (private key)\n'
+  printf '                   for public key authentication is read. This options is\n'
+  printf '                   directly passed to ssh(1)\n'
+  printf '  -v/--verbose     Verbose mode. Causes scp and ssh(1) to print debug messages\n'
+  printf '                   about their progress.\n'
+  printf '  -c/--coco        Use sftp to copy file via jumpserver. If this option is set,\n'
+  printf "                   options 'user', 'port', 'direct', 'folder' will be ignored.\n"
+end
+
 function upload --description 'upload file to remote server via proxy'
   set -l options 'h/help' 'u/user=?' 'p/port=?' 'd/direct' 'i/identity=?' 'v/verbose' 'c/coco' 'f/folder'
   argparse --name=upload $options -- $argv
+  if test $status -ne 0
+    __upload_print_help
+    return 1
+  end
 
   if set --query _flag_help
-    printf 'Usage: upload [OPTIONS] <source_file>... <dest_host>\n\n'
-    printf 'Options:\n'
-    printf '  -h/--help        Show this message and exit.\n'
-    printf '  -u/--user        Username to login.\n'
-    printf '  -p/--port        Specifies the port to connect to on the remote host.\n'
-    printf '  -d/--direct      Use direct mode.\n'
-    printf '  -f/--folder      Upload folder. Default is /tmp.'
-    printf '  -i/--identity    Select this file from which the identity (private key)\n'
-    printf '                   for public key authentication is read. This options is\n'
-    printf '                   directly passed to ssh(1)\n'
-    printf '  -v/--verbose     Verbose mode. Causes scp and ssh(1) to print debug messages\n'
-    printf '                   about their progress.\n'
-    printf '  -c/--coco        Use sftp to copy file via jumpserver. If this option is set,\n'
-    printf "                   options 'user', 'port', 'direct', 'folder' will be ignored.\n"
+    __upload_print_help
     return 0
   end
 
