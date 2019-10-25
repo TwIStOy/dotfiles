@@ -5,7 +5,7 @@ function __upload_print_help
   printf '  -u/--user        Username to login.\n'
   printf '  -p/--port        Specifies the port to connect to on the remote host.\n'
   printf '  -d/--direct      Use direct mode.\n'
-  printf '  -f/--folder      Upload folder. Default is /tmp.'
+  printf '  -f/--folder      Upload folder. Default is /tmp.\n'
   printf '  -i/--identity    Select this file from which the identity (private key)\n'
   printf '                   for public key authentication is read. This options is\n'
   printf '                   directly passed to ssh(1)\n'
