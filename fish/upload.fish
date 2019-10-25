@@ -16,7 +16,7 @@ function __upload_print_help
 end
 
 function upload --description 'upload file to remote server via proxy'
-  set -l options 'h/help' 'u/user=?' 'p/port=?' 'd/direct' 'i/identity=?' 'v/verbose' 'c/coco' 'f/folder'
+  set -l options 'h/help' 'u/user=?' 'p/port=?' 'd/direct' 'i/identity=?' 'v/verbose' 'c/coco' 'f/folder=?'
   argparse --name=upload $options -- $argv
   if test $status -ne 0
     __upload_print_help
