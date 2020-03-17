@@ -1,0 +1,24 @@
+#!/usr/bin/env expect
+
+set timeout 30
+
+trap {
+  set rows [stty rows]
+  set cols [stty columns]
+  stty rows $rows columns $cols < $spawn_out(slave,name)
+} WINCH
+
+set host [lindex $argv 0]
+
+spawn ssh jumpserver
+  expect {
+    "*MFA*" {
+      set AUTH [gets stdin]
+      send "$AUTH\r"
+      exp_continue
+    }
+    "*Opt*" { send "$host\r" }
+  }
+
+interact
+

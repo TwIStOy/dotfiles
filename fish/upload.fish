@@ -42,7 +42,7 @@ function upload --description 'upload file to remote server via proxy'
   echo (set_color green)"upload [$argv] to $host:$_flag_folder"(set_color normal)
   if set --query _flag_coco
     echo (set_color green)"upload file via jumpserver"(set_color normal)
-    echo (set_color read)'not implemented yet'(set_color normal)
+    echo (set_color red)'not implemented yet'(set_color normal)
     return 1
   else
     if set --query _flag_direct
