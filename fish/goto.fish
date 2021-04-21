@@ -24,7 +24,7 @@ function goto --description 'login remote server via proxy'
 
   if set --query _flag_coco
     # via jumpserver
-    jumpgo $host
+    $HOME/Projects/dotfiles/jumpgo $host
   else
     set --query _flag_user;   or set --local _flag_user devops
     set --query _flag_port;   or set --local _flag_port 20220

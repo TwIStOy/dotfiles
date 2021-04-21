@@ -13,7 +13,7 @@ set host [lindex $argv 0]
 spawn ssh jumpserver
   expect {
     "*MFA*" {
-      set AUTH [gets stdin]
+      set AUTH [exec /Users/hawtian/Projects/braum_goto/my-opt-auth.py]
       send "$AUTH\r"
       exp_continue
     }

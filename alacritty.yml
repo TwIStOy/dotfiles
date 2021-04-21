@@ -2,32 +2,30 @@ Window:
   dynamic_padding: false
   decorations: buttonless
   startup_mode: SimpleFullscreen
+  dynamic_title: true
 
 scrolling:
   history: 2000
   multiplier: 3
-  auto_scroll: false
-
-tabspaces: 2
 
 font:
   normal:
-    family: Iosevka SS07
-    style: Medium
+    family: RecMonoHawtian Nerd Font
+    style: Regular
   bold:
-    family: Iosevka SS07
+    family: RecMonoHawtian Nerd Font
     style: Bold
   italic:
-    family: Iosevka SS07
-    style: Mediumitalic
+    family: RecMonoHawtian Nerd Font
+    style: Italic
   size: 14.0
 
 draw_bold_text_with_bright_colors: true
 
-visual_bell:
+bell:
   duration: 0
 
-background_opacity: 0.6
+background_opacity: 0.8
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
@@ -42,11 +40,12 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: false
 
-dynamic_title: true
-
 cursor:
   style: Block
   unfocused_hollow: true
+
+shell:
+  program: /usr/local/bin/fish
 
 live_config_reload: true
 
@@ -58,14 +57,6 @@ debug:
   persistent_logging: true
 
   # Log level
-  #
-  # Values for `log_level`:
-  #   - None
-  #   - Error
-  #   - Warn
-  #   - Info
-  #   - Debug
-  #   - Trace
   log_level: Trace
 
   # Print all received window events.
